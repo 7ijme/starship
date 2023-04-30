@@ -1,0 +1,148 @@
+format = """\
+$hostname\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\
+$c\
+$gradle\
+$java\
+$nodejs\
+$rust\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$jobs$character"""
+
+# Disable the blank line at the start of the prompt
+#
+add_newline = false
+
+[git_metrics]
+added_style = 'fg:#3EC669 bg:#29315A'
+deleted_style = 'fg:red bg:#29315A'
+format = '[](#29315A)[+$added]($added_style)[/](bg:#29315A)[-$deleted]($deleted_style)[](#29315a) '
+disabled = false
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = "[➜](#3EC669)"
+error_symbol = "[➜](red)"
+
+[fill]
+symbol = " "
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[hostname]
+ssh_only = true
+ssh_symbol = " "
+style = "bg:#29315A fg:#3EC669"
+format = '[](#29315A)[ $ssh_symbol$hostname ]($style)[ ](#29315a)'
+
+[username]
+show_always = false
+style_user = "fg:#3EC669 bg:#29315A"
+style_root = "fg:red bg:#29315A"
+format = '[](#29315A)[ $user ]($style)[ ](#29315a)'
+disabled = false
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+format = '[$symbol]($style)'
+style = "fg:#3EC669 bg:#29315A"
+disabled = true # Disabled by default
+
+[os.symbols]
+Linux = " "
+Windows = " "
+Ubuntu = " "
+Debian = " "
+CentOS = " "
+Macos = " "
+
+[directory]
+style = "bg:#29315A fg:#3EC669"
+format = "[](#29315A)[ $before_root_path]($before_repo_root_style)[$path ]($style)[$read_only]($read_only_style)[ ](#29315a)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = "  "
+read_only_style = "bg:#29315A fg:red"
+truncate_to_repo = false
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"dev" = "\b\b "
+".config" = "\b\b "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+
+[git_branch]
+symbol = ""
+style = "bg:#29315A fg:#43CCEA"
+format = '[](#29315A)[ $symbol $branch ]($style)[](#29315A) '
+
+[git_status]
+style = "bg:#29315A fg:#43CCEA"
+format = '[](#29315A)[ $all_status$ahead_behind]($style)[](#29315A) '
+ahead = '[⇡${count}](fg:#B388FF bg:#29315A) '
+diverged = '[⇕⇡${ahead_count}⇣${behind_count}](fg:#ff4500 bg:#29315A) '
+behind = '[⇣${count}](fg:#B388FF bg:#29315A) '
+modified = "[ ~${count}](#FF9248 bg:#29315A) "
+staged = "[ ${count}](#3EC669 bg:#29315A) "
+conflicted = "[ ${count}](#FF9248 bg:#29315A) "
+renamed = "[ -${count}](#3EC669 bg:#29315A) "
+deleted = "[ ${count}](#FF9248 bg:#29315A) "
+up_to_date = "[](#3EC669 bg:#29315A) "
+untracked = "[ ${count}](#FF9248 bg:#29315A) "
+stashed = "[ ${count}](#3EC669 bg:#29315A) "
+
+
+[gradle]
+style = "bg:#29315A fg:red"
+format = '[](#29315A)[ $symbol ($version) ]($style)[](#29315a) '
+
+
+[java]
+symbol = " "
+style = "bg:#29315A fg:red"
+format = '[](#29315A)[ $symbol ($version) ]($style)[](#29315a) '
+
+
+[nodejs]
+symbol = ""
+style = "bg:#29315A fg:yellow"
+format = '[](#29315A)[ $symbol ($version) ]($style)[](#29315a) '
+
+
+[rust]
+symbol = ""
+style = "bg:#29315A fg:#FF9248"
+format = '[](#29315A)[ $symbol ($version) ]($style)[](#29315a) '
+
+[time]
+disabled = false
+time_format = "%R:%S" # Hour:Minute Format
+style = "bg:#29315A fg:#3EC669"
+format = '[](#29315A)[  $time ]($style)[](#29315a) '
+
+[cmd_duration]
+min_time = 1
+style = "bg:#29315A fg:cyan"
+format = '[](#29315A)[  $duration ]($style)[](#29315a) '
