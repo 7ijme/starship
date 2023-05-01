@@ -78,8 +78,8 @@ use_os_path_sep = false
 [directory.substitutions]
 "dev" = "\b\b "
 ".config" = "\b\b "
-"Development" = " "
-"Documents" = ""
+"Development" = "\b\b "
+"Documents" = "\b\b"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
