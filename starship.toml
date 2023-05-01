@@ -84,8 +84,8 @@ use_os_path_sep = false
 "~/AppData/Local/nvim" = ""
 " /starship" = " "
 # windows
-"/Development" = " "
 "~/Documents" = ""
+"/Development" = " "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
