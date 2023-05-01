@@ -71,6 +71,7 @@ truncation_symbol = "…/"
 read_only = "  "
 read_only_style = "bg:#29315A fg:red"
 truncate_to_repo = false
+use_os_path_sep = false
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
