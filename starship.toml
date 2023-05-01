@@ -76,10 +76,16 @@ use_os_path_sep = false
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"dev" = "\b\b "
-".config" = "\b\b "
-"Development" = "\b\b "
-"Documents" = "\b\b"
+#linux
+"~/dev" = " "
+# both
+"~/.config" = " "
+" /nvim" = ""
+"~/AppData/Local/nvim" = ""
+" /starship" = " "
+# windows
+"/Development" = " "
+"~/Documents" = ""
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
