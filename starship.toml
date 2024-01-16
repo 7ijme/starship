@@ -80,15 +80,17 @@ use_os_path_sep = false
 "~/dev" = " "
 # both
 "~/.config" = " "
+".config" = " "
 " /nvim" = ""
 "~/AppData/Local/nvim" = ""
 " /starship" = " "
 # windows
 "~/Documents" = ""
 "/Development" = " "
-"Downloads" = " "
+"~/Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+".dotfiles" = " "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
 # will not be replaced, because "Documents" was already substituted before.
